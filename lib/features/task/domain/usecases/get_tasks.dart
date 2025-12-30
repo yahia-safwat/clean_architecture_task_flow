@@ -1,12 +1,14 @@
+import '../../../../core/usecases/usecase.dart';
 import '../entities/task.dart';
 import '../repositories/task_repository.dart';
 
-class GetTasks {
+class GetTasks implements UseCase<List<Task>, NoParams> {
   final TaskRepository repository;
 
   GetTasks(this.repository);
 
-  Future<List<Task>> call() async {
+  @override
+  Future<List<Task>> call(NoParams params) async {
     return await repository.getTasks();
   }
 }

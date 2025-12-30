@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'injection_container.dart' as di;
-import 'presentation/bloc/task/task_bloc.dart';
-import 'presentation/pages/task_list_page.dart';
+import 'core/di/injection_container.dart' as di;
+import 'features/task/presentation/bloc/task/task_bloc.dart';
+import 'features/task/presentation/pages/task_list_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

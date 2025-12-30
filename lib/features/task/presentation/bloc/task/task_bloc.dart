@@ -1,4 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../../../../core/usecases/usecase.dart';
 import '../../../domain/usecases/add_task.dart';
 import '../../../domain/usecases/delete_task.dart';
 import '../../../domain/usecases/get_tasks.dart';
@@ -27,7 +28,7 @@ class TaskBloc extends Bloc<TaskEvent, TaskState> {
   Future<void> _onLoadTasks(LoadTasks event, Emitter<TaskState> emit) async {
     emit(TaskLoading());
     try {
-      final tasks = await getTasks();
+      final tasks = await getTasks(NoParams());
       emit(TaskLoaded(tasks));
     } catch (e) {
       emit(TaskError(e.toString()));
